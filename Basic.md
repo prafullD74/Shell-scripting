@@ -15,6 +15,20 @@
 1. How to define variables
    - define a variable by using the syntax `variable_name=value`
    - To get the value of the variable, add `$` before the variable
-   - Arithmetic Expressions
+   - [Arithmetic Expressions](#arithmetic-expressions) For decimal calculations, we can use `bc` command to get the output to a particular number of decimal places. `bc` (Bash Calculator) is a command line calculator that supports calculation up to a certain number of decimal points.
    - Numerical expressions can also be calculated and stored in a variable using the syntax `var=$((expression))`
-3. How to read user input
+   - `echo "scale=2;22/7" | bc` > `scale` defines the number of decimal places required in the output
+2. How to read user input
+   - When need to gather user input and perform relevant operations, we can take user input using the `read` command.
+   - `read -p "Enter your age" variable_name` To prompt the user with a custom message, use the `-p` flag.
+4. E
+
+#### Arithmetic Expressions
+| Operator  | Usage  |
+|---|---|
+| +  | addition  |
+| -  | subtraction  |
+| *  | multiplication  |
+| /  | division  |
+| **  | exponentiation  |
+| %  | modulus  |
