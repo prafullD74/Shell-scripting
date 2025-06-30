@@ -35,6 +35,10 @@
    - var=`df -h | grep tmpfs` to include the output of a complex command in your script, you can write the statement inside back ticks.
 7. How to get arguments for scripts from the command line
    - It is possible to give arguments to the script on execution. `$@` represents the position of the parameters, starting from one.
+8. How to Automate Scripts by Scheduling via cron Jobs
+   - Cron is a job scheduling utility, can schedule jobs to execute daily, weekly, monthly or in a specific time of the day. Automation in Linux heavily relies on cron jobs.
+   - [crontab guru](https://crontab.guru/)
+   - `crontab -l` lists the already scheduled scripts for a particular user.
 
 #### Arithmetic Expressions
 | Operator  | Usage  |
