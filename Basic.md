@@ -21,7 +21,14 @@
 2. How to read user input
    - When need to gather user input and perform relevant operations, we can take user input using the `read` command.
    - `read -p "Enter your age" variable_name` To prompt the user with a custom message, use the `-p` flag.
-4. E
+3. [Numeric Comparison logical operators](#logical-operators) : Comparison is used to check if statements evaluate to `true` or `false`. 
+4. Conditional Statements (Decision Making)
+   - `if...then...fi` statements
+   - `if...then...else...fi` statements
+   - `if..elif..else..fi`
+   - `if..then..else..if..then..fi..fi..` (Nested Conditionals)
+   - To create meaningful comparisons, we can use AND `-a` and OR `-o` as well.
+5. 
 
 #### Arithmetic Expressions
 | Operator  | Usage  |
@@ -32,3 +39,13 @@
 | /  | division  |
 | **  | exponentiation  |
 | %  | modulus  |
+
+#### Logical operators
+| Operation  | Syntax  | Explanation  |
+|---|---|---|
+| Equality  | num1 -eq num2  | is num1 equal to num2  |
+| Greater than equal to  | num1 -ge num2  | is num1 greater than equal to num2  |
+| Greater than  | num1 -gt num2  | is num1 greater than num2  |
+| Less than equal to  | num1 -le num2  | is num1 less than equal to num2  |
+| Less than  | num1 -lt num2  | is num1 less than num2  |
+| Not Equal to  | num1 -ne num2  | is num1 not equal to num2  |
