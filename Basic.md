@@ -1,7 +1,7 @@
 # INTRODUCTION
 
-`praful@Swarajay:/$` - When a shell is used interactively, it displays a $ when it is waiting for a command from the user.
-`root@Swarajay:/#` - If shell is running as root, the prompt is changed to #.
+- `praful@Swarajay:/$` - When a shell is used interactively, it displays a $ when it is waiting for a command from the user.
+- `root@Swarajay:/#` - If shell is running as root, the prompt is changed to #.
 
 ### What is a Bash Script?
 >A bash script is a series of commands written in a file. These are read and executed by the bash program. The program executes line by line. By naming conventions, bash scripts end with a .sh. However, bash scripts can run perfectly fine without the sh extension.
