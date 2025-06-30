@@ -18,3 +18,48 @@
 | `$*` | In order to get all the arguments as double-quoted, we can follow this way |
 | `$$` | To know about the process id of the current shell |
 | `$?` and `$!` | Exit status id and Process id of the last command |
+
+
+`find . -type f -name "*.sh"` helps to locate files based on certain patterns.
+
+
+```bash
+#! /bin/bash
+pwd
+
+# Check if at least one argument is provided
+if [ -z "$1" ]; then
+    echo "Usage: ./your_script_name.sh <username1> [username2]"
+    exit 1
+fi
+
+user1="$1" # First argument
+user2="$2" # Second argument (optional, if you want to compare against a second specific user)
+
+echo "User entered as argument 1: $user1"
+if [ -n "$2" ]; then # Check if a second argument was provided
+    echo "User entered as argument 2: $user2"
+fi
+
+# Compare the first argument with "vaibhav" or "prafull"
+if [[ "$user1" == "vaibhav" || "$user1" == "prafull" ]]; then
+    echo "$user1 is correct"
+else
+    echo "$user1 is incorrect"
+fi
+
+# You could also compare the first argument against the second argument provided
+# if that's what you meant by "comparing with two names as arguments".
+# For example:
+# if [[ "$user1" == "$user2" ]]; then
+#     echo "The first argument ($user1) matches the second argument ($user2)."
+# elif [ -n "$2" ]; then # Only show if second argument exists and doesn't match
+#     echo "The first argument ($user1) does not match the second argument ($user2)."
+# fi
+```
+
+In shell scripting, particularly within `if` conditions using `[ ]` or `[[ ]]`, `-z` and `-n` are **string test operators** used to check if a string is empty or not empty, respectively.
+
+**1. `-z string` (Zero length)**
+
+**2. `-n string` (Non-zero length)**
