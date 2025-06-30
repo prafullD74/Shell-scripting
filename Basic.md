@@ -28,7 +28,13 @@
    - `if..elif..else..fi`
    - `if..then..else..if..then..fi..fi..` (Nested Conditionals)
    - To create meaningful comparisons, we can use AND `-a` and OR `-o` as well.
-5. 
+5. Looping and skipping
+   - For loops allow you to execute statements a specific number of times.
+   - While loops check for a condition and loop until the condition remains `true`. We need to provide a counter statement that increments the counter to control loop execution.
+6. How to execute commands with back ticks
+   - var=`df -h | grep tmpfs` to include the output of a complex command in your script, you can write the statement inside back ticks.
+7. How to get arguments for scripts from the command line
+   - It is possible to give arguments to the script on execution. `$@` represents the position of the parameters, starting from one.
 
 #### Arithmetic Expressions
 | Operator  | Usage  |
