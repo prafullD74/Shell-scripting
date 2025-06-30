@@ -12,4 +12,9 @@
 - `chmod u+x file.sh` modifies the existing rights of a file for a particular user and provide execution rights to user.
 
 ### The Basic Syntax of Bash Scripting
-1. 
+1. How to define variables
+   - define a variable by using the syntax `variable_name=value`
+   - To get the value of the variable, add `$` before the variable
+   - Arithmetic Expressions
+   - Numerical expressions can also be calculated and stored in a variable using the syntax `var=$((expression))`
+3. How to read user input
