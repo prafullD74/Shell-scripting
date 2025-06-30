@@ -73,3 +73,4 @@ In shell scripting, particularly within `if` conditions using `[ ]` or `[[ ]]`, 
 | `\>` | Greater than | used to check the operand1 is greater than operand2 | `if [ $str1 \> $str2 ]` |
 | `-n` | Check string length greater than 0 | used to check the string is not empty | `if [ -n $str ]` |
 | `-z` | Check string length equal to 0 | used to check the string is empty | `if [ -z $str ]` |
+| `=~` | Pattern Matching | Checks if a string matches a regular expression pattern | `if [[ "$string" =~ pattern ]]` |
