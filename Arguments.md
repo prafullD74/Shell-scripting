@@ -63,3 +63,13 @@ In shell scripting, particularly within `if` conditions using `[ ]` or `[[ ]]`, 
 **1. `-z string` (Zero length)**
 
 **2. `-n string` (Non-zero length)**
+
+### String Operators | Shell Script
+| Symbol | operator | Use | Syntax |
+|---|---|---|---|
+| `=` | Equal | used to check whether two strings are equal | `if [ $str1 = $str2 ]` |
+| `!=` | Not Equal | used when both operands are not equal | `if [ $str1 != $str2 ]` |
+| `\<` | Less than | used to check operand1 is less than operand2 | `if [ $str1 \< $str2 ]` |
+| `\>` | Greater than | used to check the operand1 is greater than operand2 | `if [ $str1 \> $str2 ]` |
+| `-n` | Check string length greater than 0 | used to check the string is not empty | `if [ -n $str ]` |
+| `-z` | Check string length equal to 0 | used to check the string is empty | `if [ -z $str ]` |
