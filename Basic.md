@@ -59,3 +59,10 @@
 | Less than equal to  | num1 -le num2  | is num1 less than equal to num2  |
 | Less than  | num1 -lt num2  | is num1 less than num2  |
 | Not Equal to  | num1 -ne num2  | is num1 not equal to num2  |
+
+---
+# [Arrays in Shell Scripts](https://www.digitalocean.com/community/tutorials/arrays-in-shell-scripts)
+>Variables store single data elements. Arrays, on the other hand, can store a virtually unlimited number of data elements.
+- **Indexed Arrays**: Store elements with an index starting from 0.
+- **Associative Arrays**: Store elements in key-value pairs
+
