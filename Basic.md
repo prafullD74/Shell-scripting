@@ -66,3 +66,40 @@
 - **Indexed Arrays**: Store elements with an index starting from 0.
 - **Associative Arrays**: Store elements in key-value pairs
 
+### Accessing Array Elements Individually
+```bash
+assoc_array[element1]="Hello World"
+```
+```bash
+echo ${assoc_array[element1]}
+```
+```bash
+index_array=(1 2 3 4 5 6)
+```
+```bash
+echo ${index_array[0]}
+```
+```bash
+#!/bin/bash
+# Use of the while or for loops in shell scripts to work through the array elements
+# Copy the script below and save it as <filename>.sh
+index_array=(1 2 3 4 5 6 7 8 9 0)
+
+for i in ${index_array[@]}
+do
+        echo $i
+done
+```
+### Built-in Operations for Arrays in Shell Scripts
+1. **`[@]`** symbol to print all the elements at the same time or work with all the elements.
+2. **`#`** symbol to to provide us the count of the elements stored in the array.
+3. **`unset`** keyword to Delete Individual Array Elements.
+```bash
+echo ${assoc_array[@]}
+```
+```bash
+echo ${#index_array[@]}
+```
+```bash
+unset index_array[1]
+```
