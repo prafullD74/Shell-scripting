@@ -1,5 +1,5 @@
 # Shell-scripting
-Shell scripts are widely used to automate repetitive tasks, such as backups, log file processing, system administration routines, and more.
+Shell scripts are widely used to automate repetitive tasks, such as backups, log file processing, system administration routines, and more. Shell scripts can be used to manage and configure operating system settings, start or stop services, and perform file management tasks.
 
 1. **Terminal**: The terminal serves as the interface, appearing as a window on the screen where commands are typed and output is viewed.
 2. **Shell**: The shell is a program that interprets and executes commands typed into the terminal. It translates human-readable commands into instructions the operating system's kernel can understand and execute.
