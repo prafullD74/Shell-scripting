@@ -1,6 +1,6 @@
 # Command-line arguments
 
->Command-line arguments are parameters that are passed to a script while executing them in the bash shell. They are also known as positional parameters in Linux.
+>Command-line arguments are parameters that are passed to a script while executing them in the bash shell. They are also known as positional parameters in Linux. In shell scripting, two types of parameters can be passed to a script or function: positional parameters and named parameters (also called named arguments). Positional parameters are parameters that are passed to a script or function based on their position in the command line or function call.
 ### How Shell Scripts Understand Command Line Arguments
 - Command-line arguments help make shell scripts interactive for the users.
 - They help a script identify the data it needs to operate on.
