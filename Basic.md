@@ -10,6 +10,10 @@
 - `#! /bin/bash` Scripts are also identified with a shebang. Shebang is a combination of bash `#` and bang `!` followed the the bash shell path.
 - Executable scripts appear in a different colour from rest of the files and folders. Scripts have execution rights for the user executing them.
 - `chmod u+x file.sh` modifies the existing rights of a file for a particular user and provide execution rights to user.
+- run the script with the following command(change filename)
+```bash
+bash basic_script.sh
+```
 
 ### The Basic Syntax of Bash Scripting
 1. How to define variables
