@@ -24,6 +24,51 @@ In shell scripting, functions are blocks of code that can be reused multiple tim
 5. Validate function arguments.
 6. Use descriptive variables names
 
+## This script finds and prints prime numbers within a given range
+```bash
+#!/bin/bash
+
+# --- Get input from the user ---
+read -p "Enter the starting number (Left-End): " start_num
+read -p "Enter the ending number (Right-End): " end_num
+
+# --- Function to check if a number is prime ---
+check_if_prime() {
+    local num_to_check=$1 # Store the argument in a more readable variable
+
+    # Numbers less than 2 are not prime
+    if [ "$num_to_check" -lt 2 ]; then
+        return # Exit the function
+    fi
+
+    # Count divisors (excluding 1 and itself)
+    divisor_count=0
+    for (( i=2; i*i <= num_to_check; i++ )); do # Optimization: check up to sqrt(num)
+        if (( num_to_check % i == 0 )); then
+            divisor_count=$(( divisor_count + 1 ))
+            break # Found a divisor, no need to check further, it's not prime
+        fi
+    done
+
+    # If no divisors were found, it's prime
+    if [ "$divisor_count" -eq 0 ]; then
+        printf "%d " "$num_to_check" # Print the prime number
+    fi
+}
+
+# --- Main part of the script ---
+echo -e "\nPrime Numbers between $start_num and $end_num are:" # -e to enable \n
+
+# Loop through the range and check each number
+for (( current_num=start_num; current_num <= end_num; current_num++ )); do
+    check_if_prime "$current_num"
+done
+
+echo "" # Add a final newline for clean output
+```
+- `read -p`: Combines the `echo -n` and `read` commands into one, making the input part more compact.
+- `echo -e`: Used to easily include newline characters (\n).
+
 ### [How to create and enter a directory](https://www.digitalocean.com/community/tutorials/bashrc-file-in-linux#practical-bashrc-examples)
 ```bash
 # Creates a directory and immediately enters it
