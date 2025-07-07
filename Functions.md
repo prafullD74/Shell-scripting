@@ -1,5 +1,5 @@
 # Functions
-
+In shell scripting, functions are blocks of code that can be reused multiple times within a script or across different scripts. Functions are defined with a name, a set of parameters (optional), and a block of code that performs some operation. The code inside the function can access and modify variables within the function or outside the function, depending on their scope.
 
 
 
