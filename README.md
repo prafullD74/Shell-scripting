@@ -5,6 +5,16 @@ Shell scripts are widely used to automate repetitive tasks, such as backups, log
 2. **Shell**: The shell is a program that interprets and executes commands typed into the terminal. It translates human-readable commands into instructions the operating system's kernel can understand and execute.
 3. **Bash**: Bash (Bourne Again Shell) is a specific type of shell frequently used in Unix-like operating systems, such as Linux and macOS.
 
+## [Bash scripting cheatsheet](https://devhints.io/bash?source=post_page-----52957f960844---------------------------------------)
+### Applications of Shell Scripting
+1. **System administration**: Shell scripts are commonly used in system administration tasks, such as automating backups, monitoring system performance, and managing user accounts.
+2. **Data processing**: Shell scripts can be used to automate data processing tasks, such as sorting, filtering, and transforming data.
+3. **Web development**: Shell scripts can be used to automate tasks related to web development, such as deploying web applications and managing servers.
+4. **Network management**: Shell scripts can be used to automate tasks related to network management, such as configuring network devices, monitoring network traffic, and managing firewalls.
+5. **Testing and automation**: Shell scripts can be used to automate testing tasks, such as running test suites and generating test reports.
+6. **Scientific computing**: Shell scripts can be used in scientific computing, such as automating data analysis tasks and running simulations.
+7. ** Application deployment**: Shell scripts can be used to automate application deployment tasks, such as setting up environments, installing dependencies, and configuring applications.
+
 ### [What is a .bashrc file?](https://www.digitalocean.com/community/tutorials/bashrc-file-in-linux)
 - The .bashrc file is a shell script that the Bash shell runs whenever it is started interactively. In simple terms, every time you open a new terminal window, Bash reads and executes the commands within this file.
 - **Interactive login shell**: (e.g., connecting via SSH) Bash looks for `/etc/profile` first, then searches for `~/.bash_profile`, `~/.bash_login`, and `~/.profile` in that order. It only reads and executes the first one it finds.
