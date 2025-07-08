@@ -188,6 +188,7 @@ exit "${EXIT_SUCCESS}" # Explicitly exit with a success status
 - A loop that executes forever without terminating executes for an infinite number of times. For this reason, such loops are called infinite loops.
 2. Break Statement
   - The break statement is used to terminate the execution of the entire loop, after completing the execution of all of the lines of code up to the break statement. It then steps down to the code following the end of the loop.
+  - Stopping a loop when a condition is met
   ```bash
   #!/bin/bash
   echo "--- Example of 'break' ---"
@@ -206,6 +207,7 @@ exit "${EXIT_SUCCESS}" # Explicitly exit with a success status
 3. Continue statement
   - The continue statement is similar to the break command, except that it causes the current iteration of the loop to exit, rather than the entire loop.
   - This statement is useful when an error has occurred but you want to try to execute the next iteration of the loop.
+  - Skipping specific iterations
    ```bash
    #!/bin/bash
    
