@@ -68,6 +68,43 @@ echo "" # Add a final newline for clean output
 ```
 - `read -p`: Combines the `echo -n` and `read` commands into one, making the input part more compact.
 - `echo -e`: Used to easily include newline characters (\n).
+- `echo -n`: Prevents echo from adding a newline character at the end, so the cursor stays on the same line as the prompt.
+- `start_num`: The variable where the user's input will be stored.
+- `$1` refers to the first argument passed to the function when it's called.
+- `if [ "$num_to_check" -lt 2 ]; then return` : Prime numbers are defined as numbers greater than 1. So, if the number is 0, 1, or negative, it's not prime, and the function immediately exits (return) without doing further checks.
+- `return`: If the number is less than 2, the function immediately exits, meaning no further checks are needed, and nothing is printed.
+- `for (( i=2; i*i <= num_to_check; i++ )); do ... done`:
+     - `i*i <= num_to_check`: This is the key optimization! If a number N has a divisor d greater than its square root (sqrt(N)), then it must also have a divisor N/d that is less than its square root. So, we only need to check for divisors up to the square root of the number. This significantly speeds up the primality test for larger numbers.
+     - `i++`: Increments i by 1 in each iteration.
+     - `break` immediately exits the for loop.
+- `printf "%d " "$num_to_check"` : Prints the prime number followed by a space.
+- `\n`: Prints a newline character, so the output starts on a fresh line.
+- Explination
+    * **`current_num = 4`:**
+
+      * `check_if_prime 4` is called.
+      * Inside `check_if_prime`: `num_to_check` is 4.
+      * `if [ "4" -lt 2 ]` is FALSE.
+      * `divisor_count = 0`.
+      * `for (( i=2; i*i <= 4; i++ ))` (i.e., `for (( i=2; 4 <= 4; i++ ))`) - Loop starts.
+          * **Iteration `i=2`**:
+              * `if (( 4 % 2 == 0 ))` (i.e., `if (( 0 == 0 ))`) is TRUE.
+              * `divisor_count=$(( 0 + 1 ))` so `divisor_count` becomes `1`.
+              * `break` is executed. The loop terminates immediately.
+      * `if [ "1" -eq 0 ]` is FALSE. Nothing is printed.
+    * **`current_num = 5`:**
+
+      * `check_if_prime 5` is called.
+      * Inside `check_if_prime`: `num_to_check` is 5.
+      * `if [ "5" -lt 2 ]` is FALSE.
+      * `divisor_count = 0`.
+      * `for (( i=2; i*i <= 5; i++ ))` (i.e., `for (( i=2; 4 <= 5; i++ ))`) - Loop runs.
+          * **Iteration `i=2`**:
+              * `if (( 5 % 2 == 0 ))` (i.e., `if (( 1 == 0 ))`) is FALSE.
+          * Loop condition `i*i <= 5` will be `9 <= 5` next iteration, which is FALSE. Loop ends.
+      * `if [ "0" -eq 0 ]` is TRUE.
+      * `printf "%d " "5"` prints: ` 5  `
+
 
 ### [How to create and enter a directory](https://www.digitalocean.com/community/tutorials/bashrc-file-in-linux#practical-bashrc-examples)
 ```bash
