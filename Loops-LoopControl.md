@@ -53,7 +53,8 @@ done
 echo "Loop finished!"
 ```
 ### For Loop
-For loop operates on lists of items. It repeats a set of commands for every item in a list.
+>For loop operates on lists of items. It repeats a set of commands for every item in a list. Trying to rename a thousand files, or execute the same command several times, then the for loop is definitely the right tool for the job.
+- The basic concept is: FOR a given set of items, DO a thing
 - Syntax
 ```bash
 #/bin/bash
@@ -72,6 +73,29 @@ do
   echo "I like $fruit."
 done
 ```
+```bash
+for i in $(ls *.pdf); do
+mv $i $(basename $i .pdf)_$(date +%Y%m%d).pdf
+done
+```
+```bash
+# File that you want to scp to several servers.
+for i in web{0..10};do scp somefile.txt ${i}:;done;
+
+# two data centers, one in the United States, another in Canada, and the server's naming convention
+# web-us-0, web-us-1, web-us-2, web-us-3
+# web-ca-0, web-ca-1, web-ca-2, web-ca-3
+for i in web-{us,ca}-{0..3};do echo $i;done
+
+#To copy the list of files file1.txt, file2.txt, and file3.txt to the web servers, use this nested loop
+for i in file{1..3};do
+  for x in web{0..3};do
+    echo "Copying $i to server $x"
+    scp $i $x
+  done
+done
+```
+
 ### Select Loop
 The select loop provides an easy way to create a numbered menu from which users can select options. It is useful when you need to ask the user to choose one or more items from a list of choices.
 - Syntax
@@ -155,3 +179,47 @@ exit "${EXIT_SUCCESS}" # Explicitly exit with a success status
 - The `case` statement in shell scripting is designed to match a value against one or more patterns. The patterns are separated by the pipe symbol `|`, which acts as an `OR` operator for patterns. When you write tea|coffee|water|all), Bash interprets this as a single pattern clause.
 ### Nesting Loops
 >All the loops support nesting concept which means you can put one loop inside another similar one or different loops. This nesting can go up to unlimited number of times based on your requirement.
+
+## Loop Control
+>two statements that are used to control shell loops
+- break statement
+- continue statement
+1. Infinite Loop
+- A loop that executes forever without terminating executes for an infinite number of times. For this reason, such loops are called infinite loops.
+2. Break Statement
+  - The break statement is used to terminate the execution of the entire loop, after completing the execution of all of the lines of code up to the break statement. It then steps down to the code following the end of the loop.
+  ```bash
+  #!/bin/bash
+  echo "--- Example of 'break' ---"
+  
+   for i in {1..10}
+   do
+     if [ "$i" -eq 5 ]; then
+       echo "Breaking loop at i=$i"
+       break # Exit the 'for' loop immediately
+     fi
+     echo "Current number: $i"
+   done
+   
+   echo "Loop finished. (Reached after 'break')"
+  ```
+3. Continue statement
+  - The continue statement is similar to the break command, except that it causes the current iteration of the loop to exit, rather than the entire loop.
+  - This statement is useful when an error has occurred but you want to try to execute the next iteration of the loop.
+   ```bash
+   #!/bin/bash
+   
+   echo "--- Example of 'continue' ---"
+   
+   for i in {1..10}
+   do
+     if [ "$i" -eq 3 ] || [ "$i" -eq 7 ]; then
+       echo "Skipping number: $i"
+       continue # Skip to the next iteration of the 'for' loop
+     fi
+     echo "Current number: $i"
+   done
+   
+   echo "Loop finished. (All iterations completed)"
+   ```
+   
