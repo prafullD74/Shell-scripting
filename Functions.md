@@ -30,6 +30,10 @@ function_name(){
     // body of the function
 }
 ```
+- This code is not executed until the function is called. Functions are read in, but basically ignored until they are actually called.
+- `exit` stops the program, and `return` returns control to the caller. The difference is that a shell function cannot change its parameters, though it can change `global parameters`.
+
+
 ## This script finds and prints prime numbers within a given range
 ```bash
 #!/bin/bash
