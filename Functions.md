@@ -24,6 +24,12 @@ In shell scripting, functions are blocks of code that can be reused multiple tim
 5. Validate function arguments.
 6. Use descriptive variables names
 
+### Basic Structure of a Function
+```bash
+function_name(){
+    // body of the function
+}
+```
 ## This script finds and prints prime numbers within a given range
 ```bash
 #!/bin/bash
@@ -104,7 +110,11 @@ echo "" # Add a final newline for clean output
           * Loop condition `i*i <= 5` will be `9 <= 5` next iteration, which is FALSE. Loop ends.
       * `if [ "0" -eq 0 ]` is TRUE.
       * `printf "%d " "5"` prints: ` 5  `
-
+### Types of Functions
+1. The functions that return a value to the caller.
+2. The functions that terminate the shell using the 'exit' keyword.
+3. The functions that alter the value of a variable or variables.
+4. The functions that echo output to the standard output.
 
 ### [How to create and enter a directory](https://www.digitalocean.com/community/tutorials/bashrc-file-in-linux#practical-bashrc-examples)
 ```bash
